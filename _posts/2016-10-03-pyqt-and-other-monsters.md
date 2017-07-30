@@ -1,5 +1,5 @@
 ---
-title: PyQt and other monsters: a deep dive into GUIs and packaging python apps
+title: "PyQt and other monsters: a deep dive into GUIs and packaging python apps"
 layout: post
 ---
 One of the big bad and ugly things about python is that the vast majority of scripts don't have (or in fact, need) a GUI. This means if you dig a little under the surface and try to write a GUI or package an app for people who don't want or need python on their machine, it's easy to get put off by the mess that's under there and the lack of other people there are to ~~moan at~~ get help from.
