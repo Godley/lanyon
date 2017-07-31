@@ -1,5 +1,5 @@
 ---
-title: Python snippet of the day: vars() not hasattr()
+title: "Python snippet of the day: vars() not hasattr()"
 layout: post
 ---
 At the minute, now that I'm largely coursework free, I've been working through music XML, converting things to objects.

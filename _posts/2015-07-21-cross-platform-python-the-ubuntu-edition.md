@@ -1,5 +1,5 @@
 ---
-title: Cross-platform python: the ubuntu edition
+title: "Cross-platform python: the ubuntu edition"
 layout: post
 ---
 ![]({{ site.url }}/images/2015/09/Screen-Shot-2015-07-21-at-01-40-49.png)

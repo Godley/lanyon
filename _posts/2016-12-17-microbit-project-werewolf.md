@@ -1,5 +1,5 @@
 ---
-title: Microbit Project: werewolf
+title: "Microbit Project: werewolf"
 layout: post
 ---
 ![]({{ site.url }}/images/2016/12/p02wfdqd.jpg)

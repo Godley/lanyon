@@ -1,5 +1,5 @@
 ---
-title: Packaging a python app: Mac problems
+title: "Packaging a python app: Mac problems"
 layout: post
 ---
 I started on a post about a month ago about packaging for multiple operating systems. The process involves taking a python application and producing an app file for Mac, an exe file for Windows, and probably a shell script or something for Linux. Here I'm going to talk about problems I specifically found producing an app file.
