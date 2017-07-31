@@ -13,7 +13,7 @@ paginate:            5
 # About/contact
 author:
   name:              Charlotte Godley
-  url:               https://twitter.com/charwarz
+  twitter:           charwarz
   email:             me@charlottegodley.co.uk
 
 # Custom vars
