@@ -561,3 +561,11 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+
+/* footer stuff */
+.logos {
+  overflow: hidden;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
