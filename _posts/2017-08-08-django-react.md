@@ -46,4 +46,4 @@ var options = {
 ```
 This way the guest API just gives me start and endpoints and what method of travel we took, and there's no information about specifics, but enough information to show off + document where we're going.
 
-Now seems to be taking a while to upload my stuff, but once it's done I'll update my nav :)
+I've now linked to my map from the sidebar - for convenience, [here](https://cgtravel.now.sh/app/) it is.
