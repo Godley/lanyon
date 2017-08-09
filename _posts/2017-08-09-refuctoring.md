@@ -44,3 +44,13 @@ mydumbmethod(mycrapdictionary2)
 mydumbmethod(mycrapdictionary3)
 ```
 OHKAY so we're calling the method with dictionaries constantly, THEN WHY IS IT NECESSARY TO FLEXIBLY ALLOW A CALLABLE. 
+
+```
+def get_my_clients():
+   return {blah: objectInstantiation(blah)}
+
+def get_my_client(ref):
+    return get_my_client()[ref]
+```
+
+WHY DO YOU NEED THE SECOND HELPER, AND FURTHERMORE HAVING IT HAS CAUSED A BUG. STAHP.
