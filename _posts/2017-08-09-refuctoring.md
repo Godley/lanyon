@@ -60,7 +60,7 @@ In what universe is it necessary for you to offer people the change to submit a 
 Some time back, while one of my senior colleagues who I would normally go to for merge reviews was on holiday, I decided to take our end to end test code for k8s and turn it into a library, so I could use some of the functions elsewhere on our deployment pipeline.
 
 I named it a very generic `kubeutil`, had it reviewed by a fellow python programmer and pushed that into the end to end test suite. Then I started to write code with it for our deployment pipeline.
-My colleague came back the following week and questioned what I'd done. Initially I was slightly offended, not because he was wrong but because I got a bought of imposter syndrome and thought he thought I was really, really stupid for having done it.
+My colleague came back the following week and questioned what I'd done. Initially I was slightly offended, not because he was wrong but because I got hit by a wave of imposter syndrome and thought he thought I was really, really stupid for having done it.
 
 At the time, and I don't know if he'd picked this up from somewhere else in the Python community, he told me the rule of thumb "if you're doing the same thing in 3 different projects, write a library". Seems logical enough, for me because if you split out that code too early, it immediately becomes harder to manage the dependency because it comes from a different source.
 
