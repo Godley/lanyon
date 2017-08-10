@@ -6,7 +6,7 @@ Around the time I first started my degree, someone showed me [this video](https:
 
 More recently I've spent a fair amount of time working with other peoples' code and finding some styles irk me, the kind that remind me of that video. So with that in mind I found some choice examples and wrote down my observations. The first draft of this post and the conversations before it were very...sweary. I've calmed down a bit.
 
-# Just because a language has some great features, doesn't mean you should always use them
+## Just because a language has some great features, doesn't mean you should always use them
 Let's take this code:
 ```
 class MyClass(object):
@@ -33,7 +33,7 @@ Like everything else in Python, they have their place and they can be useful, bu
 1. `myotherprop` is not only calling that property, it's doing another potentially long process iterating a for loop. It's also literally just adding one to everything in that list.
 1. `myproperty` doesn't seem to be getting used much but for that list, so why the nesting?
 
-# Premature flexibility can flex your code the wrong way
+## Premature flexibility can flex your code the wrong way
 ```
 def my_method(clients, data):
     """
@@ -56,7 +56,7 @@ my_method({"blahblahblah": blah, "blah3": blah})
 
 In what universe is it necessary for you to offer people the change to submit a callable when all of your uses have been passing in dictionaries? All you're achieving here is making your method over complicated. Adding another code path and test case for no real reason "just in case" you run into a reason for it doesn't make your codebase better, it makes it harder to maintain.
 
-# You should (probably) only write a library if you're going to use it in 3 or more places
+## You should (probably) only write a library if you're going to use it in 3 or more places
 Some time back, while one of my senior colleagues who I would normally go to for merge reviews was on holiday, I decided to take our end to end test code for k8s and turn it into a library, so I could use some of the functions elsewhere on our deployment pipeline.
 
 I named it a very generic `kubeutil`, had it reviewed by a fellow python programmer and pushed that into the end to end test suite. Then I started to write code with it for our deployment pipeline.
