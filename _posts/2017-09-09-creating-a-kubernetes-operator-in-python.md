@@ -2,6 +2,7 @@
 layout: post
 title: Creating a Kubernetes Operator in Python
 slug: creating-a-kubernetes-operator-in-python
+date: '2017-09-09 12:42:05+01:00'
 ---
 An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens networking wise to our clusters then the services in that data center can carry on running, and locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
 
