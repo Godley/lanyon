@@ -9,7 +9,7 @@ Or at least I think that's why we do it? Don't quote me on that, networking and 
 
 Anyway, we mirror the 3 standard locations images come from in open source - the Docker Hub, Google Container Registry and Quay. In addition to that we have our core internal registry (just named internal), and we have some additional registries for specific streams of work which we need to mirror based on what that cluster is for. 
 
-This poses an issue for which operators are probably the way to go - all the mirrors are made up of the same kubernetes resource types with slightly different variable input. Up until now we've maintained this issue using a template which we pump variables into in order to generate the new yaml, then bundle that together with everything else being deployed. 
+This poses an issue for which operators are probably the way to go - all the mirrors are made up of the same Kubernetes resource types with slightly different variable input. Up until now we've maintained this issue using a template which we pump variables into in order to generate the new yaml, then bundle that together with everything else being deployed. 
 
 The problem is that other teams maintain the "streamed" registries, and they need to be added to only specific clusters, so that means while they should be templated in the same way they can't form part of our baseline yaml that goes onto the cluster...I guess this part of the blog might be confusing without a picture of our deployment model, but hopefully you get the point.
 
@@ -20,12 +20,12 @@ I am a firm believer that any code you can write TDD style, you should. And any 
 
 Reason being that I used to work in embedded systems, and I was never given the time or the support to write proper tests and use continuous integration correctly to avoid ingrained regressions. If I'm in a position to avoid that I will at all costs, not just because it gives you confidence your change hasn't broken anything but because it makes it easier for new contributors to work with your code. The first place I look to find out what your code *actually* does, not how to use the output, is tests.
 
-With that in mind I've tried doing TDD on kubernetes tools before when I wrote our end-to-end healthcheck tester application (which one day maybe we'll open source if people think it's useful). I failed because I didn't quite get what Kubernetes was, or how to effectively mock stuff. I've done a lot more mocking recently in the process of testing other tools, so I figured I could try mocking out parts of the kubernetes API.
+With that in mind I've tried doing TDD on Kubernetes tools before when I wrote our end-to-end healthcheck tester application (which one day maybe we'll open source if people think it's useful). I failed because I didn't quite get what Kubernetes was, or how to effectively mock stuff. I've done a lot more mocking recently in the process of testing other tools, so I figured I could try mocking out parts of the kubernetes API.
 
 This turned out to be
 a) boring: I really love the idea of writing code to create stuff on a cluster. It's fun, but when you're weighed down in thinking "how do I exactly imitate how that cluster behaves", it takes all the fun out having orchestrated an actual container.
 
-b) hard: the main logic of this operator is it's going to watch events about custom objects. For some reason the kubernetes python api uses urllib3 rather than requests so I can't use httmock which makes things a lot more logical, and the urllib3-mock library doesn't appear to have a way to mock a streaming api. I settled with mocking out the stream method but eh. I really prefer having mocked the data from an api, rather than the methods inside the client library.
+b) hard: the main logic of this operator is it's going to watch events about custom objects. For some reason the kubernetes python api uses `urllib3` rather than `requests` so I can't use httmock which makes things a lot more logical, and the `urllib3-mock` library doesn't appear to have a way to mock a streaming api. I settled with mocking out the stream method but eh. I really prefer having mocked the data from an api, rather than the methods inside the client library.
 
 c) slow: I don't 100% know how to do everything on this task and while TDD is good for taking a complex task and breaking it into small, testable pieces, the mocking problem means I spent several hours trying to mock rather than code for a problem which isn't _overly_ complicated.
 
@@ -35,6 +35,17 @@ So I've temporarily hung my "is this tested" hat on the shelf and continued on m
 
 Next up, I needed to think about how I was going to manage the actual *C*ustom *R*esource *D*efinition (CRD). CRDs are a way of extending the Kubernetes API to cater for resource types which you manage, they look a bit like this:
 ```
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: myresources.area.company.postfix
+spec:
+  group: area.company.postfix
+  version: v1
+  names:
+    kind: MyResource
+    plural: myresources
+  scope: Namespaced # Can also be cluster level using "Cluster"
 ```
 
 The thing to think about here was that the [Prometheus operator](https://github.com/coreos/prometheus-operator), which is the one our clusters use pretty heavily for setting up monitoring pipelines, creates that CRD for you. I didn't have much opinion on this either way, but in access control terms that means the operator needs full access to create definitions at cluster-wide level...which isn't so great in security terms.
@@ -57,3 +68,13 @@ I started to think about this in code terms but I diverted back to writing yaml 
 # How do I lay this out in code?
 The final issue, and really the reason we're making this operator, is that our current method of creating registry mirrors involves creating 2 services, 1 statefulset, 1 daemonset and 1 pvc...per mirror.
 Naturally to avoid duplication, we have all of this in a template and then use some hacky bash script to `sed` different variables and values into the template on creation.
+
+Question is, do we carry on with this but use the python yaml library to load it in/some templating engine, or do you represent that yaml template as objects and update them with the data coming in from the custom resource?
+
+I've uhmmed and ahhed over this a lot. I think I'm headed towards creating an object which represents both the custom resource coming in and the outgoing Kubernetes resources. Seems the most pythonic method + means I can click around to get to the attributes in my IDE, rather than looking at yaml.
+
+I do like working with yaml, but I think if you're writing code (unless it's some test fixture in which case probably easier to work in yaml) you should be thinking in code, not manifest. That's part because the code I'm working with right now is object oriented, if I went with functional I'd maybe think differently
+
+# Summary
+I hope this blog post has given an insight into the things you need to think about when writing your own operators, but also shown they're easier to write/get started with if the problem is well defined.
+If it's not well defined you should probably step back and consider whether you should actually be writing one?
