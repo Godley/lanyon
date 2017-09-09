@@ -3,14 +3,33 @@ layout: post
 title: Creating a Kubernetes Operator in Python
 slug: creating-a-kubernetes-operator-in-python
 ---
+An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens networking wise to our clusters then the services in that data center can carry on running, and locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
 
+Or at least I think that's why we do it? Don't quote me on that, networking and DNS are areas I'm still fairly rusty on.
 
-Here are some things I've needed to think about
+Anyway, we mirror the 3 standard locations images come from in open source - the Docker Hub, Google Container Registry and Quay. In addition to that we have our core internal registry (just named internal), and we have some additional registries for specific streams of work which we need to mirror based on what that cluster is for. 
+
+This poses an issue for which operators are probably the way to go - all the mirrors are made up of the same kubernetes resource types with slightly different variable input. Up until now we've maintained this issue using a template which we pump variables into in order to generate the new yaml, then bundle that together with everything else being deployed. 
+
+The problem is that other teams maintain the "streamed" registries, and they need to be added to only specific clusters, so that means while they should be templated in the same way they can't form part of our baseline yaml that goes onto the cluster...I guess this part of the blog might be confusing without a picture of our deployment model, but hopefully you get the point.
+
+Aaaaaanyway, I've been itching to write some more on what I do at work, so here are my thoughts on getting started.
 
 # Test Driven Development
-I am a firm believer that any code you can write TDD style, you should. And any code you think you _can't_ write TDD style, you should still try anyway or write it as if you're intending to test it in some way later.
+I am a firm believer that any code you can write TDD style, you should. And any code you think you _can't_ write TDD style, you should still try anyway or write it as if you're intending to test it in some way later. For example our bash scripts for deployments didn't have any testing and I wasn't really sure how we could fix this - 
 
-Reason being that I used to work in embedded systems, and I was never given the time or the support to write proper tests and use continuous integration correctly to avoid ingrained regressions. If I'm in a position to avoid that I will at all costs, not just because it makes 
+Reason being that I used to work in embedded systems, and I was never given the time or the support to write proper tests and use continuous integration correctly to avoid ingrained regressions. If I'm in a position to avoid that I will at all costs, not just because it gives you confidence your change hasn't broken anything but because it makes it easier for new contributors to work with your code. The first place I look to find out what your code *actually* does, not how to use the output, is tests.
+
+With that in mind I've tried doing TDD on kubernetes tools before when I wrote our end-to-end healthcheck tester application (which one day maybe we'll open source if people think it's useful). I failed because I didn't quite get what Kubernetes was, or how to effectively mock stuff. I've done a lot more mocking recently in the process of testing other tools, so I figured I could try mocking out parts of the kubernetes API.
+
+This turned out to be
+a) boring: I really love the idea of writing code to create stuff on a cluster. It's fun, but when you're weighed down in thinking "how do I exactly imitate how that cluster behaves", it takes all the fun out having orchestrated an actual container.
+
+b) hard: the main logic of this operator is it's going to watch events about custom objects. For some reason the kubernetes python api uses urllib3 rather than requests so I can't use httmock which makes things a lot more logical, and the urllib3-mock library doesn't appear to have a way to mock a streaming api. I settled with mocking out the stream method but eh. I really prefer having mocked the data from an api, rather than the methods inside the client library.
+
+c) slow: I don't 100% know how to do everything on this task and while TDD is good for taking a complex task and breaking it into small, testable pieces, the mocking problem means I spent several hours trying to mock rather than code for a problem which isn't _overly_ complicated.
+
+So I've temporarily hung my "is this tested" hat on the shelf and continued on my merry way. 
 
 # Your CRD
 
@@ -18,7 +37,7 @@ Next up, I needed to think about how I was going to manage the actual *C*ustom *
 ```
 ```
 
-The thing to think about here was that the [Prometheus operator](), which is the one our clusters use pretty heavily for setting up monitoring pipelines, creates that CRD for you. I didn't have much opinion on this either way, but in access control terms that means the operator needs full access to create definitions at cluster-wide level...which isn't so great in security terms.
+The thing to think about here was that the [Prometheus operator](https://github.com/coreos/prometheus-operator), which is the one our clusters use pretty heavily for setting up monitoring pipelines, creates that CRD for you. I didn't have much opinion on this either way, but in access control terms that means the operator needs full access to create definitions at cluster-wide level...which isn't so great in security terms.
 
 We decided we were just going to create it separately and the operator would just sit and wait for it to be there before watching custom resources get created. That way, the operator only needs read only access to custom resource definitions.
 
@@ -28,9 +47,13 @@ The other issue was you can pretty much state whatever you like as the extension
 You may notice from the above definition that no where does it specify what fields are valid, and beyond that what content is valid. 
 
 This is a good and bad thing 
-- (-) it means people could throw absolutely anything into a custom resource and not know why the operator wasn't working as expected.
+- (-) it means people could throw absolutely anything into a custom resource and not know why the operator wasn't working as expected. (I suppose you can combat this with good docs, which is what I'm planning on doing as I go along)
 - (+) You can throw absolutely any fields into your custom resource so it's highly flexible.
 
-I have a feeling there's some validation coming of Kubernetes CRDs but I'm not sure which version that's coming into.
+I have a feeling there's some validation coming of Kubernetes CRDs but I'm not sure which version that's coming into. 
+
+I started to think about this in code terms but I diverted back to writing yaml and showing it to my team. We decided we actually just need 2 fields.
 
 # How do I lay this out in code?
+The final issue, and really the reason we're making this operator, is that our current method of creating registry mirrors involves creating 2 services, 1 statefulset, 1 daemonset and 1 pvc...per mirror.
+Naturally to avoid duplication, we have all of this in a template and then use some hacky bash script to `sed` different variables and values into the template on creation.
