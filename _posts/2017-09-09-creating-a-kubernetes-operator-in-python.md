@@ -4,7 +4,7 @@ title: Creating a Kubernetes Operator in Python
 slug: creating-a-kubernetes-operator-in-python
 date: '2017-09-09 12:42:05+01:00'
 ---
-An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens networking wise to our clusters then the services in that data center can carry on running, and locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
+An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens to the network connection to our clusters then the services in that data center can carry on running, or if the image somehow disappears from that source then it's cached and avoids problems like the [leftpad NPM issue](http://www.haneycodes.net/npm-left-pad-have-we-forgotten-how-to-program/). It also locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
 
 We mirror the 3 standard locations images come from in open source - the Docker Hub, Google Container Registry and Quay. In addition to that we have our core internal registry (just named internal), and we have some additional registries for specific streams of work which we need to mirror based on what that cluster is for. 
 
