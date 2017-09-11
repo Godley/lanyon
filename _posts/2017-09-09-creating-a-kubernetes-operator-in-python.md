@@ -4,7 +4,7 @@ title: Creating a Kubernetes Operator in Python
 slug: creating-a-kubernetes-operator-in-python
 date: '2017-09-09 12:42:05+01:00'
 ---
-An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens to the network connection to our clusters then the services in that data center can carry on running, or if the image somehow disappears from that source then it's cached and avoids problems like the [leftpad NPM issue](http://www.haneycodes.net/npm-left-pad-have-we-forgotten-how-to-program/). It also locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
+An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens to the outside network connection to our clusters then the services in that data center can carry on running, or if the image somehow disappears from that source then it's cached and avoids problems like the [leftpad NPM issue](http://www.haneycodes.net/npm-left-pad-have-we-forgotten-how-to-program/). It also locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
 
 We mirror the 3 standard locations images come from in open source - the Docker Hub, Google Container Registry and Quay. In addition to that we have our core internal registry (just named internal), and we have some additional registries for specific streams of work which we need to mirror based on what that cluster is for. 
 
@@ -33,7 +33,7 @@ c) slow: I don't 100% know how to do everything on this task and while TDD is go
 
 So I've temporarily hung my "is this tested" hat on the shelf and continued on my merry way. 
 
-# Your CRD
+# Defining things
 
 Next up, I needed to think about how I was going to manage the actual *C*ustom *R*esource *D*efinition (CRD). CRDs are a way of extending the Kubernetes API to cater for resource types which you manage, they look a bit like this:
 ```
@@ -56,7 +56,7 @@ We decided we were just going to create it separately and the operator would jus
 
 The other issue was you can pretty much state whatever you like as the extension/group name for the CRD. Elsewhere our labelling follows a specific pattern but I couldn't remember what that was. Here's where merge requests are fab for this kind of thing - I wrote the definition and asked for feedback, which (hopefully) prevents it from being inconsistent since other people on the team are likely to notice stuff like that.
 
-# But...what...do I actually need in that CR
+# What information do I actually need?
 You may notice from the above definition that no where does it specify what fields are valid, and beyond that what content is valid. 
 
 This is a good and bad thing 
