@@ -13,7 +13,11 @@ All the mirrors are made up of the same Kubernetes resource types with slightly 
 The problem is that other teams maintain the "streamed" registries, and they need to be added to only specific clusters, so that means while they should be templated in the same way they can't form part of our baseline yaml that goes onto the cluster...I guess this part of the blog might be confusing without a picture of our deployment model, but hopefully you get the point.
 
 # What the hell is an Operator?
-Operators are programs which run in a Kubernetes cluster and extend the Kubernetes API. Instead of having this duplicated template all over the place, you tell the cluster "I'm defining a new resource type", create an object of that resource type and the operator watches for those new custom objects and informs the Kubernetes API what entities to create. The intention is to have operations as code to avoid duplication, and it works well in cases like this where you have the same set of resources being created over and over again. Other examples include monitoring and alerting pipelines such as Prometheus and database installations like Postgres and Cassandra. Whenever you need to do an upgrade or add something to the template, you're now just changing the deployed operator which will then roll out changes for you, rather than needing to modify lots of different copies of the same thing.
+Operators are programs which run in a Kubernetes cluster and extend the Kubernetes API. Instead of having this duplicated template all over the place, you tell the cluster "I'm defining a new resource type", create an object of that resource type and the operator watches for those new custom objects and informs the Kubernetes API what entities to create. 
+
+The intention is to have operations as code to avoid duplication, and it works well in cases like this where you have the same set of resources being created over and over again. Other examples include monitoring and alerting pipelines such as Prometheus and database installations like Postgres and Cassandra. 
+
+Whenever you need to do an upgrade or add something to the template, you're now just changing the deployed operator which will then roll out changes for you, rather than needing to modify lots of different copies of the same thing.
 
 Aaaaaanyway, I've been itching to write some more on what I do at work, so here are my thoughts on getting started.
 
