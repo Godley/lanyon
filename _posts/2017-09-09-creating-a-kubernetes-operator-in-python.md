@@ -6,13 +6,14 @@ date: '2017-09-09 12:42:05+01:00'
 ---
 An integral part of our Kubernetes infrastructure at work is container image registry mirroring. It ensures if anything happens networking wise to our clusters then the services in that data center can carry on running, and locks down access in and out of the cluster to that mirror, rather than haphazard pulling from registries in the cloud.
 
-Or at least I think that's why we do it? Don't quote me on that, networking and DNS are areas I'm still fairly rusty on.
+We mirror the 3 standard locations images come from in open source - the Docker Hub, Google Container Registry and Quay. In addition to that we have our core internal registry (just named internal), and we have some additional registries for specific streams of work which we need to mirror based on what that cluster is for. 
 
-Anyway, we mirror the 3 standard locations images come from in open source - the Docker Hub, Google Container Registry and Quay. In addition to that we have our core internal registry (just named internal), and we have some additional registries for specific streams of work which we need to mirror based on what that cluster is for. 
-
-This poses an issue for which operators are probably the way to go - all the mirrors are made up of the same Kubernetes resource types with slightly different variable input. Up until now we've maintained this issue using a template which we pump variables into in order to generate the new yaml, then bundle that together with everything else being deployed. 
+All the mirrors are made up of the same Kubernetes resource types with slightly different variable input. Up until now we've maintained this issue using a template which we pump variables into in order to generate the new yaml, then bundle that together with everything else being deployed. 
 
 The problem is that other teams maintain the "streamed" registries, and they need to be added to only specific clusters, so that means while they should be templated in the same way they can't form part of our baseline yaml that goes onto the cluster...I guess this part of the blog might be confusing without a picture of our deployment model, but hopefully you get the point.
+
+# What the hell is an Operator?
+Operators are a class of entities in Kubernetes which extend the Kubernetes API in a customised way - so, instead of having this duplicated template all over the place, you tell the cluster "I'm defining a new resource type", create an object of that resource type and the operator manages the creation and management of that resource type, generally through telling the Kubernetes API what entities to create and what fields those entities should have. The intention is to have operations as code to avoid duplication, and it works well in cases like this where you have the same set of resources being created over and over again. Other examples include monitoring and alerting pipelines such as Prometheus and database installations like Postgres and Cassandra.
 
 Aaaaaanyway, I've been itching to write some more on what I do at work, so here are my thoughts on getting started.
 
