@@ -22,7 +22,7 @@ I am a firm believer that any code you can write TDD style, you should. And any 
 
 If I'm in a position to avoid testing code through deploying it then poking at it I will at all costs, not just because it gives you confidence your change hasn't broken anything but because it makes it easier for new contributors to work with your code. The first place I look to find out what your code *actually* does, not how to use the output, is tests.
 
-With that in mind I've tried doing TDD on Kubernetes tools before when I wrote our end-to-end healthcheck tester application (which one day maybe we'll open source if people think it's useful). I failed because I didn't quite get what Kubernetes was, or how to effectively mock stuff. I've done a lot more mocking recently in the process of testing other tools, so I figured I could try mocking out parts of the kubernetes API.
+With that in mind I've tried doing TDD on Kubernetes tools before when I wrote our end-to-end healthcheck tester application (which one day maybe we'll open source if people think it's useful). I failed because I didn't quite get what Kubernetes was, or how to effectively mock stuff. I've done a lot more mocking recently in the process of testing other tools, so I figured I could try mocking out parts of the Kubernetes API.
 
 This turned out to be
 a) boring: I really love the idea of writing code to create stuff on a cluster. It's fun, but when you're weighed down in thinking "how do I exactly imitate how that cluster behaves", it takes all the fun out having orchestrated an actual container.
