@@ -1,0 +1,72 @@
+---
+layout: post
+title: Testing in Python
+slug: testing-in-python
+---
+I commonly get asked questions around testing and test driven development in Python. Here's some collated tips I've been doing for a while. If anyone has any specific questions or additions to these, please give me a tweet (@charwarz).
+
+## Pick a library and (generally) stick to it
+My first tip for any given python project is to pick a testing library and stick to it.
+
+The reason I say this is that it's more important that you learn how to write good tests and have enough of them to be confident in your code then to get hung up over switching from one library to another or whether one is better than the other. You can use all of them probably in similar ways so long as you get the hang of the features each library provides you.
+
+The two I tend to debate between are `unittest` and `pytest`. Reasons for unittest:
+1. It's built into python, you'll probably get more resources for it
+1. It's simple
+
+Reasons for pytest:
+1. It's extendible
+1. It lends itself more easily to non-object oriented paradigms
+1. All of your fixtures and fittings generally end up in one place, rather than spread around several testing classes
+
+Generally these days, I use unittest. I like pytest, but a lot of the time using fixtures causes me to follow bad patterns, such as pulling in a fixture purely so it can connect and disconnect me from a database or client, then not actually call that client in the test.
+On the other hand, in my previous job I used pytest a lot for things like production tests - normally I would need to:
+- instantiate a connection to a device
+- send it a message
+- wait for one back
+- disconnect
+Which lends itself well to using fixtures, rather than object properties.
+
+Additionally, at work we've mostly standardised our team around unittest - every CI pipeline we have for python just calls `python setup.py test` and while you could probably get it to deal with pytest, unittest fits into that style easier.
+
+## Mock as deeply as you can
+Initially when I wrote tests, I would lazily pick a method within the method I was testing, and monkeypatch style mock it to return whatever I wanted.
+If you want to write several hundred tests to get through all the paths in your code, this is fine.
+If you want tests which look like you're doing a lot when they're really not, this serves your purpose.
+
+By now though, my mantra is I will try to get the mock as far through my process as I possibly can. For example, if I'm mocking an API, even if I'm using a client library, I will mock the URL and the data it returns rather than the method I call on the client library. Reasons being:
+- I can generally mock an API successfully and more easily than I can understand what objects and return values a client is likely to produce from that data.
+- The tests give a more accurate portrayal of what happens when you actually run the code somewhere.
+
+On the subject of mocking APIs, I highly recommend `httmock` for mocking `requests`. Super easy to use. For `urllib3` I haven't found anything that comes close, but `urllib3-mocks` does a reasonably good job.
+
+However, sometimes placing your mocks in this way can make it harder - for example right now we're puzzling over how exactly to test and mock a GitPython repo. Mocking git itself in this case seems overkill and probably requires more understanding of git than is really necessary.
+
+## If you can't test now, write it like you're going to later
+In my previous blog post I talked about how I started to write a Kubernetes Operator TDD style, got bored, found it hard and gave up.
+
+However, I'd got the picture in my head that I wanted to be able to add tests once I was done, so I kept all my pieces to small units and was able to pull the coverage up to 96% with relatively few tests and mocks.
+Thoughts on this:
+- keep methods to handling one element of your code. e.g I had a method which handled updating a statefulset, updating a service, etc.
+- If your code is object oriented, use the paradigm to it's fullest potential and make interactions with your object's own data as close to the class as possible. 
+- keep object instantiations as easy as possible and well documented as possible, so that you don't need to go digging through other classes to figure out how you instantiated them normally.
+
+Honestly most of those tips are just common sense and are points that you'll force yourself into if you *can* follow TDD rather than test-last, just some things to keep in mind if it's not clear right away how to TDD your project.
+
+## PyCharm ProTip: running tests easily
+This is a bit of a PyCharm feature plug, but I commonly get asked by co workers/people watching my talks how I do that magic "run test suite" thing in PyCharm. Here you go:
+Look for this magic dropdown:
+![](images/2017/09/pycharm-toolbar.png)
+
+Click edit configuration, then + on the next ui, look for "python testing":
+![](images/2017/09/pycharm-edit.png)
+Enter whatever you want as the name/target folder and it will run the test type you choose on that target.
+
+If you then press the "play" button to the right of the drop down you get a nice ui at the bottom showing you how testing is going:
+![](images/2017/09/pycharm-testrunner.png)
+
+If you're using a mac, I've recently noticed it gives you push notifications if you leave the window and the tests finish, which is neat.
+
+You can do a similar thing with running/debugging configurations, select the python option and then pick which file you want to run. The three buttons to the right of the configuration drop down allow you to run/debug/run tests with coverage.
+
+One blocker I've found on this runner is it doesn't seem to handle `django-setuptests` and `django-autoconfig` which we use heavily at work, it can't seem to deal with local/test settings. To get around that I tend to run those tests using a generic python configuration, then tell it to just run `setup.py` with the `test` argument.
