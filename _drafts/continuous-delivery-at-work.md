@@ -101,3 +101,15 @@ For example, previous processes used templating languages and internally develop
 Avoid rules, unless you really, really need them. This involves talking to current users but taking what they need with a pinch of salt or a stepped back view on the process as a whole. 
 
 Any time feature requests or pain points come up, ask yourself - is there another way they could do this? How is this going to harm or hinder other people's needs and workflows? 
+
+# Did that work?!
+Finally, any deployment process should be able to tell you whether the deployment went ok without you putting in *too* much effort.
+Previously our developers had to ssh in to each instance of their deployment and run commands to work out whether the container started ok, which isn't scalable and is just generally fairly boring.
+
+## What we did about it
+Mostly, this is solved through the tooling choice, i.e Kubernetes means your instances are all visible and checked through one interface. In addition to this though we provide slack integrations telling users when new deployments occur/whether they succeeded, we have monitoring for the platform itself and we have different access levels depending on what your needs are as a developer. 
+
+Eventually we'll be able to provide role based access control (RBAC) by user, but right now we have:
+1. readonly access when you're just checking that something went ok
+1. developer access for when you need to poke about a little bit
+1. admin access when something goes horribly wrong and your time is limited so you need to just fix it then (presumably) go back to the git pipeline and fix it permanently.
