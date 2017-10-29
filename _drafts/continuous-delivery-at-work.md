@@ -35,7 +35,7 @@ In my previous job I spent several hours literally going through the svn logs an
 The main "concept" or tool we're using to avoid this is GitOps. Essentially, it means your infrastructure, whether that's a k8s cluster, a cloudformation deployment, whatever, is represented as a git repo. CI/CD pipelines are used to deploy everything, so an addition/update/rollback is represented as a merge request. [Weaveworks write quite a lot on this topic](https://www.weave.works/blog/gitops-operations-by-pull-request)
 
 ### Version 0.1
-![]()
+![](/images/2017/10/old-layout.png)
 
 Initally we had something like this:
 1. Microservices in whatever language are built/tested/deployed through CI to their appropriate package manager from their repo (TMI: we have Nexus instances as the central source for those package managers)
@@ -51,7 +51,7 @@ It's also not particularly secure or maintainable. Lots of different repos have 
 
 
 ### Version 1.0
-![]()
+![](/images/2017/10/new-layout.png)
 As above, but:
 1. We add a repo which builds the yaml manifests and bundles them into a tar, which is put in a raw Nexus repository
 1. The deployment repo deploys not only the application, but all applications. This is done through some raw yaml files, but mostly, urls to those tar files we deployed in the previous repo.
@@ -113,3 +113,6 @@ Eventually we'll be able to provide role based access control (RBAC) by user, bu
 1. readonly access when you're just checking that something went ok
 1. developer access for when you need to poke about a little bit
 1. admin access when something goes horribly wrong and your time is limited so you need to just fix it then (presumably) go back to the git pipeline and fix it permanently.
+
+# Summary
+All of what we've done comes down to making the [pit of success]() as wide as possible for all users. I don't know whether it's perfect but it's a good jumping off point, and if users need to alter it or ask us to improve it we're very open to suggestions.
