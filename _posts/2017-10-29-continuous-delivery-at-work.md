@@ -2,6 +2,7 @@
 layout: post
 title: Continuous delivery at work
 slug: continuous-delivery-at-work
+date: '2017-10-29 21:23:29+00:00'
 ---
 _This is a sort of writeup of my talk given at DevOps Days Edinburgh this week. I've reordered some of what I said in the talk since this is a blog post. Slides are [here](https://speakerdeck.com/godley/engineering-a-continuous-delivery-pipeline)_
 
