@@ -115,5 +115,12 @@ Eventually we'll be able to provide role based access control (RBAC) by user, bu
 1. developer access for when you need to poke about a little bit
 1. admin access when something goes horribly wrong and your time is limited so you need to just fix it then (presumably) go back to the git pipeline and fix it permanently.
 
+Obviously, having full admin access kind of negates the first two access levels, so we have that disabled by default and provide explicit instructions for how to enable it on a per-namespace basis, with a heavy emphasis that
+
+- This is temporary and you should disable it when you're done fiddling
+- That we don't have fine grained access control, so when you provide your dev team with admin access to your namespace, you provide admin access to all dev teams.
+
+Giving instructions for admin access and enabling it via merge request enables our team to avoid being the police and cut out a step in the support chain (i.e devs don't have to go back and forth from us to do what they need to do), but also ensures it's easy for us or other more relevant admins to review whether it's necessary and roll it back when the problem is resolved.
+
 # Summary
 All of what we've done comes down to making the [pit of success]() as wide as possible for all users. I don't know whether it's perfect but it's a good jumping off point, and if users need to alter it or ask us to improve it we're very open to suggestions.
