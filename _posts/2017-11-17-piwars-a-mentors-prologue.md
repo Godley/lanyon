@@ -9,12 +9,12 @@ Around March of this year I volunteered at my first [PiWars](https://piwars.org)
 
 For anyone who doesn't want to build a robot or feel as if they have enough time, but wants to be more involved than spectating, I really recommend volunteering. It's a great way to contribute to Mike and Tim's efforts, help people, learn some more about the competition and above all have fun. The requirements on you are fairly low - you'll be given a timetable of when you're needed before the event and some instruction on what to do when you get to your station.
 
-Anyway, one particular small person I always enjoy hanging out with at these events is Amy Willis, who I somehow persuaded to form her own robot team and let me join. I've done some volunteering with school groups before, but never anything on a recurring basis, so I'm expecting I'll find this much more rewarding and hoping Amy will learn a lot from the experience.
+Anyway, one particular little person I always enjoy hanging out with at these events is Amy, who I somehow persuaded to form her own robot team and let me join. I've done some volunteering with school groups before, but never anything on a recurring basis, so I'm expecting I'll find this much more rewarding and hoping Amy will learn a lot from the experience.
 
 This blogpost is essentially tips for mentoring I've picked up mostly from talking to her and thinking about our progress so far. 
 
 # Gauge your starting point
-The first thing I did in this process was have a Skype call, since I live in St. Albans and Amy lives in Ipswich. I came up with this list of questions for us to talk about, since I've met Amy a few times, but didn't know for sure where she was at or what she wanted to do:
+The first thing I did in this process was have a Skype call, since we don't live in the same cities. I came up with this list of questions for us to talk about, since I've met Amy a few times, but didn't know for sure where she was at or what she wanted to do:
 ```
 1. What’s your favourite thing about programming?
 1. What do you think’s hardest about programming?
