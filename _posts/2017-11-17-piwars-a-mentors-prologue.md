@@ -31,7 +31,7 @@ We started talking about this in March, and then maybe skyped around April.
 
 However, I'm fairly...forgetful. Volunteering can be one of those things where fitting it fully into your timetable takes a bit of effort. Little people have school and homework to think about I presume, so as the adult I think I needed to take charge and put in a proper schedule so we're both on top of what we need to do here. 
 
-At the march/April stage though, focussing on this was also tough because we had no list of challenges or application submitted yet, so it's all rough ideas.
+At the March/April stage though, focussing on this was also tough because we had no list of challenges or application submitted yet, so it's all rough ideas.
 
 As of this month I'm going over to see her and then planning to put in a routine "let's check where we're at" call to make sure we both stay on track and there's a medium for her to ask me any questions. 
 
