@@ -14,7 +14,7 @@ Anyway, one particular little person I always enjoy hanging out with at these ev
 This blogpost is essentially tips for mentoring I've picked up mostly from talking to her and thinking about our progress so far. 
 
 ## Gauge your starting point
-The first thing I did in this process was have a Skype call, since we don't live in the same cities. I came up with this list of questions for us to talk about, since I've met Amy a few times, but didn't know for sure where she was at or what she wanted to do:
+We started off by having a Skype call, since we don't live in the same cities. I came up with this list of questions for us to talk about, since I've met Amy a few times, but didn't know for sure where she was at or what she wanted to do:
 ```
 1. What’s your favourite thing about programming?
 1. What do you think’s hardest about programming?
@@ -24,7 +24,7 @@ The first thing I did in this process was have a Skype call, since we don't live
 1. Which challenge from piwars did you really like?
 ```
 
-The list you need to ask your little people probably varies on setting, and there may be more interactive ways for you to figure out what your starting level is and what to focus on. 
+The list you need to ask your little people probably varies on setting, and there may be more interactive ways for you to figure out what your starting level is. Regardless it's important to start here so you know what to focus on and what interests your mentees.
 
 ## Start early, and check in regularly
 We started talking about this in March, and then maybe skyped around April. 
@@ -47,7 +47,7 @@ That initial conversation I decided this was what we needed to work out between 
 1. Pull together code from mini tasks
 ```
 
-I stole elements of this plan from David Whale's school group timetable. Honestly, not done all that much on any of it just yet. We discussed it during the call and we now have some more solid ideas on theme, decoration and specialty, but since all of them intermingle with each other it's difficult to say "let's do this, then this, then this"
+I stole elements of this plan from David Whale's school group timetable. Honestly, we haven't done all that much on any of it just yet. We discussed it during the call and we now have some more solid ideas on theme, decoration and specialty, but since all of them intermingle with each other it's difficult to say "let's do this, then this, then this"
 
 ## Have fun!
 Most importantly of all, have fun and don't beat yourself up over how much or how little time you're committing to mentoring. So long as it pulls together in the end and your little person or group of little people has a way of contacting you and you're not being **too** ambitious about what you're trying to achieve, it'll work out fine.
