@@ -46,27 +46,27 @@ This is a bit more complex I'll grant you, but...
 ```
 LOGGER.setLevel(level=logging.DEBUG)
 ```
-1. We can tune our output up and down, according to whether you're debugging particularly deeply or not
+- We can tune our output up and down, according to whether you're debugging particularly deeply or not
 
 ```
 logging.basicConfig(level=logging.DEBUG)
 ```
-1. We can tune the output of ALL code including library code or just our own code
+- We can tune the output of ALL code including library code or just our own code
 
 `LOGGER.info("Result was blah")` vs `LOGGER.debug("Hello, world")`
-1. We don't need to put in 200 print statements, take them out then put them back in again whenever we're stuck with that problem again. We can just lift the logger object's level or drop the level of the output down to debug.
+- We don't need to put in 200 print statements, take them out then put them back in again whenever we're stuck with that problem again. We can just lift the logger object's level or drop the level of the output down to debug.
 
-1. logger objects are singletons (i.e logger objects for a given name are only created once, any calls using the same name again will return the exact same object instance. That's why it's `getLogger` not `createLogger`). The benefit if this is that you could have a logger which covers your whole program, not just the current file or context, and you can tweak the settings of other logger objects.
+- Additionally, logger objects are singletons (i.e logger objects for a given name are only created once, any calls using the same name again will return the exact same object instance. That's why it's `getLogger` not `createLogger`). The benefit if this is that you could have a logger which covers your whole program, not just the current file or context, and you can tweak the settings of other logger objects.
     - The standard in industry tends to be to use `__name__` because when your log lines are outputted, it will start with the name of the file or context which gives you a better indication of where in the program this took place.
 
-1. Your debug output now has an indication of how important the output is, for example let's look at the output of this program:
+- Your debug output now has an indication of how important the output is, for example let's look at the output of this program:
 ```
 python3 myprog.py
 DEBUG:__main__:Numbers: 1, 2
 INFO:__main__:Result was: 3
-```
+``` 
 
-1. Variables actually have meaning - notice we're not using "%" to format the variables straight into your output, we're passing them alongside your description. This means information about those variables - what type they are, what they contain - isn't cast or lost in a bland string, we can get at that information later.
+- Variables actually have meaning - notice we're not using "%" to format the variables straight into your output, we're passing them alongside your description. This means information about those variables - what type they are, what they contain - isn't cast or lost in a bland string, we can get at that information later.
 
 ## Advanced usages
 There are a million and one examples on stackoverflow etc on advanced logging techniques, so I'm not going to duplicate them here, but the [python documentation](https://docs.python.org/3/howto/logging-cookbook.html) provides some fairly thorough examples of how this can be used to distinguish output between threads, to output it to file, to add timestamps and lots of other cool stuff.
