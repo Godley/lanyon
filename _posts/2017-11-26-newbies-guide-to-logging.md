@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'A basic guide to Python Logging'
+title: 'A basic guide to (Python) Logging'
 slug: basic-guide-to-logging
 date: '2017-11-26 16:02:00+00:00'
 ---
