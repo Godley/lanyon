@@ -9,7 +9,7 @@ Recently, I had the following revellation
 
 Educators, be those tutorial writers, former teachers, or current teachers are using print statements everywhere because they don't know that industry doesn't do that. (and why should they?)
 
-Or at least, having 2 former teachers and one current teacher respond in that way leads me to believe this. So I thought I'd write a short guide on how and why to use logging instead of print.
+Or at least, having 2 former teachers respond in that way leads me to believe this. I thought I'd write a short guide on how and why to use logging instead of print.
 
 ## What's the difference?
 
