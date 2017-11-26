@@ -56,7 +56,7 @@ logging.basicConfig(level=logging.DEBUG)
 `LOGGER.info("Result was blah")` vs `LOGGER.debug("Hello, world")`
 1. We don't need to put in 200 print statements, take them out then put them back in again whenever we're stuck with that problem again. We can just lift the logger object's level or drop the level of the output down to debug.
 
-1. logger objects are singletons (that's why it's `getLogger` not `createLogger`), so you could have a logger which covers your whole program, not just the current file or context. 
+1. logger objects are singletons (i.e logger objects for a given name are only created once, any calls using the same name again will return the exact same object instance. That's why it's `getLogger` not `createLogger`). The benefit if this is that you could have a logger which covers your whole program, not just the current file or context, and you can tweak the settings of other logger objects.
     - The standard in industry tends to be to use `__name__` because when your log lines are outputted, it will start with the name of the file or context which gives you a better indication of where in the program this took place.
 
 1. Your debug output now has an indication of how important the output is, for example let's look at the output of this program:
