@@ -7,7 +7,7 @@ date: '2017-11-26 16:02:00+00:00'
 Recently, I had the following revellation
 ![](images/2017/logging.png)
 
-Educators, be those tutorial writers, former teachers, or current teachers are using print statements everywhere because they don't know that industry doesn't do that.
+Educators, be those tutorial writers, former teachers, or current teachers are using print statements everywhere because they don't know that industry doesn't do that. (and why should they?)
 
 Or at least, having 2 former teachers and one current teacher respond in that way leads me to believe this. So I thought I'd write a short guide on how and why to use logging instead of print.
 
@@ -41,7 +41,8 @@ if __name__ == '__main__':
     LOGGER.info("Result was: %i", result)
 ```
 
-This is a bit more complex, but please bare with me about the benefits:
+This is a bit more complex I'll grant you, but...
+## Benefits
 ```
 LOGGER.setLevel(level=logging.DEBUG)
 ```
@@ -67,5 +68,7 @@ INFO:__main__:Result was: 3
 
 1. Variables actually have meaning - notice we're not using "%" to format the variables straight into your output, we're passing them alongside your description. This means information about those variables - what type they are, what they contain - isn't cast or lost in a bland string, we can get at that information later.
 
+## Advanced usages
+There are a million and one examples on stackoverflow etc on advanced logging techniques, so I'm not going to duplicate them here, but the [python documentation](https://docs.python.org/3/howto/logging-cookbook.html) provides some fairly thorough examples of how this can be used to distinguish output between threads, to output it to file, to add timestamps and lots of other cool stuff.
 
-### What's better about this
+Please note that while my examples given here are all python, the python logging library originates from log4j (java library) and there are similar abilities built into most other well used languages.
