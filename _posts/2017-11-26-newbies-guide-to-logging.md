@@ -16,7 +16,7 @@ Or at least, having 2 former teachers respond in that way leads me to believe th
 Here's some code using print:
 ```
 def adder(num1, num2):
-    print("numbers: %i, %i" % (num1, num2))
+    print("numbers: " + str(num1) + ", " + str(num2))
     return num1 + num2
 
 result = adder(1, 2)
@@ -27,48 +27,50 @@ Here's the same code using logging best practice:
 ```
 import logging # which is built into python
 
-
+# get a logger object with a useful name. If the program is ran from this file, __name__ will be "__main__", otherwise will be the name of the current file if imported.
 LOGGER = logging.getLogger(__name__) 
 LOGGER.setLevel(level=logging.DEBUG)
 
 def adder(num1, num2):
+    # formatting string, means "we're expecting 2 integers"
     LOGGER.debug("Numbers: %i, %i", num1, num2)
     return num1 + num2
 
+# enables us to use the main method from other languages, avoids the code being called by mistake when importing the file
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG) # allows us to tune ALL of the loggers that have been used in this code (i.e if we called library code which used loggers, they would also use DEBUG). 
     result = adder(1, 2)
     LOGGER.info("Result was: %i", result)
 ```
 
-This is a bit more complex I'll grant you, but...
-## Benefits
-```
-LOGGER.setLevel(level=logging.DEBUG)
-```
-- We can tune our output up and down, according to whether you're debugging particularly deeply or not
-
-```
-logging.basicConfig(level=logging.DEBUG)
-```
-- We can tune the output of ALL code including library code or just our own code
-
-`LOGGER.info("Result was blah")` vs `LOGGER.debug("Hello, world")`
-- We don't need to put in 200 print statements, take them out then put them back in again whenever we're stuck with that problem again. We can just lift the logger object's level or drop the level of the output down to debug.
-
-- Additionally, logger objects are singletons (i.e logger objects for a given name are only created once, any calls using the same name again will return the exact same object instance. That's why it's `getLogger` not `createLogger`). The benefit if this is that you could have a logger which covers your whole program, not just the current file or context, and you can tweak the settings of other logger objects.
-    - The standard in industry tends to be to use `__name__` because when your log lines are outputted, it will start with the name of the file or context which gives you a better indication of where in the program this took place.
-
-- Your debug output now has an indication of how important the output is, for example let's look at the output of this program:
+The output of this program looks like this:
 ```
 python3 myprog.py
 DEBUG:__main__:Numbers: 1, 2
 INFO:__main__:Result was: 3
-``` 
+```
 
-- Variables actually have meaning - notice we're not using "%" to format the variables straight into your output, we're passing them alongside your description. This means information about those variables - what type they are, what they contain - isn't cast or lost in a bland string, we can get at that information later.
+## Why should I debug this way? 
+A lot of people are probably going to be thinking this is a lot more code than just calling print. Mostly, I think logging is a long term gain in this regard for these reasons:
 
-## Advanced usages
-There are a million and one examples on stackoverflow etc on advanced logging techniques, so I'm not going to duplicate them here, but the [python documentation](https://docs.python.org/3/howto/logging-cookbook.html) provides some fairly thorough examples of how this can be used to distinguish output between threads, to output it to file, to add timestamps and lots of other cool stuff.
+1. It allows you to have levels of information from your output, depending what you're doing. There are 5 levels built into python:
+    - debug: highest verbosity of output. For use when you're trying to figure out what the hell is wrong with your program.
+    - info: information which is intended to let you know whereabouts in your program you've got to.
+    - warn: information which could indicate something went wrong in execution, like "tried to send status to x endpoint but endpoint wasn't available" but won't cause any serious problems
+    - error: something went wrong. Could be anything from "we hit an exception but we can deal with it" to "your user entered something incorrectly"
+    - exception: we hit an exception?
+
+
+1. You can tune the level without needing to remove or comment out those lines. Generally you can do this at the logger object level, e.g using `LOGGER.setLevel`, or for your whole program, e.g `logging.basicConfig(level=logging.<level_in_caps_here>)`
+
+1. By default your output now gives you some context of whereabouts you are in the program, as shown by the example output I mentioned earlier. Particularly with big programs or programs with a lot of different objects/classes, that makes it easier to instantly pin point where you are in the program.
+
+1. With a few lines of code extra to what I have above, you can create different output formats without needing to remember to do that across all of your calls to print. Common example is adding timestamps, like this:
+    ```
+    ```
+    - For more examples take a look at the [python logging cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
+
+1. You're teaching people what they're likely to actually use in industry.
+
 
 Please note that while my examples given here are all python, the python logging library originates from log4j (java library) and there are similar abilities built into most other well used languages.
