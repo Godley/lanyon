@@ -6,7 +6,7 @@ permalink:           /:title/
 # Setup
 title:               Charlotte Godley
 description:         'A blog about software engineering'
-url:                 http://blog.charlottegodley.co.uk
+url:                 http://charlottegodley.co.uk
 baseurl:             ''
 paginate:            5
 
