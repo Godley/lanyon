@@ -5,11 +5,13 @@ title: Talks
 
 On this page I'm listing the talks I've given.
 
-## The automated sheet music librarian
+## Increasing the bus factor
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CKUmsGKdNqQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<script async class="speakerdeck-embed" data-id="dc2e602a048b48d2a0de8bb04cc43a17" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-I gave this talk at **EMF Camp 2016 and Cambridge Python User Group** topic being my final year project [mahogany/muselib/I'm bad at naming things](https://github.com/godley/muselib)
+[Video](https://skillsmatter.com/skillscasts/12440-cloud-native-london-august)
+
+A talk on scalable training of teams of all sizes, particularly those using or intending to use cloud native technologies.
 
 ## Engineering a continuous delivery pipeline/CD with kubernetes/Don't hate the player hate the pipeline.
 
@@ -21,3 +23,9 @@ Gave this talk at **[Kubernetes London](https://skillsmatter.com/skillscasts/104
 ## Kubernetes with Python
 
 Gave this talk at Cambridge Python User Group and [London Python](https://skillsmatter.com/skillscasts/11142-kubernetes-and-python). Subject was learning Kubernetes from a python dev perspective, covering basic concepts and how to work with the API. [Additional resources](https://github.com/godley/k8s-talk) which I failed at presenting due to docker/minikube issues at London Python :(
+
+## The automated sheet music librarian
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CKUmsGKdNqQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+I gave this talk at **EMF Camp 2016 and Cambridge Python User Group** topic being my final year project [mahogany/muselib/I'm bad at naming things](https://github.com/godley/muselib)
