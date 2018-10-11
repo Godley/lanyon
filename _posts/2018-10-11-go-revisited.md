@@ -2,6 +2,7 @@
 layout: post
 title: 'Go, revisited?'
 slug: go-revisited
+date: '2018-10-11'
 ---
 
 I've had a few people ask if I was ever going to add to my last blog post about my feelings on Go.
