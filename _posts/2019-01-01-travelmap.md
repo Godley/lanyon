@@ -16,7 +16,7 @@ Now that I'm starting on 2019 travel plans - namely, Iceland and India - I wante
 1. Improve the UI and generally make the models less clunky to work with
 
 ## Step 1 - shift the database
-I went with [elephantSQL](https://elephantsql.com) as my database provider for this project as I was recommended this by my partner who has other side projects of this nature. It took about 10 minutes to set this up and a few hours fiddling on the django end.
+I went with [elephantSQL](https://www.elephantsql.com) as my database provider for this project as I was recommended this by my partner who has other side projects of this nature. It took about 10 minutes to set this up and a few hours fiddling on the django end.
 
 Since I needed to configure this database rather than create a file, chuck it on the server then download/upload a new one occasionally, I also had to do any migrations before chucking it into action, so I added `python3 manage.py migrate` to the dockerfile. (I do the `makemigrations` step manually as it may require user input from time to time). This necessitated changing `now.json` to tell `now` I need the `DATABASE_URL` at container build time.
 
