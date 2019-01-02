@@ -35,7 +35,7 @@ The second thing was the number of connections - django will reuse connections w
 ## Step 2 - get the api key out of git
 For the frontend I'm using [mapbox](https://mapbox.com) which is another service I love using. I'd done a bad thing by chucking my API key into git - that key is now refreshed on mapbox so it's of little relevance now. The reason for this is I'm a relative newbie at frontend and simply didn't get how to use environment variables in frontend code - the concept of not having an environment is still a bit weird to me.
 
-Anyway, having probed the internet and my boyfriend for answers, I went with [`dotenv`]() and had the docker process spit out the api key environment variable to a file which is loaded by that library, which is again loaded from a `now` secret.
+Anyway, having probed the internet and my boyfriend for answers, I went with [`dotenv`](https://www.npmjs.com/package/dotenv) and had the docker process spit out the api key environment variable to a file which is loaded by that library, which is again loaded from a `now` secret.
 
 Around this time I also found out how to properly do CD using now - I had previously got a hack together using travis-ci, but since I last looked Now has a good integration with GitHub, meaning all you need to do is click "install" and now will figure out everything from your `now.json` file. I'm well impressed.
 ![now ui]({{ site.url }}/images/now-ui.png)
