@@ -51,3 +51,6 @@ The main thing I wanted to get to was accurate drawings for roadtrips, instead o
 ![route in iceland]({{ site.url }}/images/iceland-lines.png)
 
 Yet again, mapbox has an api for this, so I now have a thing which takes the locations named in the db, converts them to geocoded locations and then requests matches from mapbox. I'm still working on this but the api docs are really nice to use.
+
+## Summary
+I've really enjoyed doing this, and the tooling for deploying small applications seems to get better every year. If you stepped back to when I was at university you'd probably have had to manage your own VM, figure out the ssh connection between github, your CI provider and your deployment location, and somehow keep secret details secret. `now`, GitHub and elephantSQL have really made putting this somewhere other than my laptop a doddle.
