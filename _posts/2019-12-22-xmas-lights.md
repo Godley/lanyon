@@ -79,8 +79,8 @@ I was out in York at the time texting my dad, who has a 3D printer and _loves_ m
 
 By the time I was back to our Airbnb in York, having only sent him a couple of links to the stuff I'd bought and not having measured the actual tollerances on the boards whatsoever, my dad had already designed a print, printed it, and cut out some milk bottle plastic circles to act as the diffuser material.
 
-![design]({{ site.url }}/images/design.jpeg)
-![print]({{ site.url }}/images/print.jpeg)
+![design](/images/design.jpeg)
+![print](/images/print.jpeg)
 
 A few weeks later I was back at my parents house, while there I desoldered a bunch of connections to make them fit properly in the cases and took the lot back home where I turned it on.
 
