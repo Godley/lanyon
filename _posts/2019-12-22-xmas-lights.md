@@ -69,7 +69,7 @@ I'm still not 100% sure what the problem was here, I think it's a combination of
 For the former, I tried using a voltage regulator to bring it up to 5v. This completely changed the colour of the LEDs to something I'd not told it (was like greeny/reddy) so that made things worse.
 For the latter, I tried using capacitors at the edge of each board. This proved entirely pointless.
 
-In the end I moved on to using a sketch [from the Adafruit Xmas lights tutorial](https://learn.adafruit.com/simple-beautiful-color-changing-light-strand) and this worked just fine. I was never intending to use that example anyway (it's called "twinkly lights" for reference, TODO: find the lib I was using).
+In the end I moved on to using a sketch [from the Adafruit Xmas lights tutorial](https://learn.adafruit.com/simple-beautiful-color-changing-light-strand) and this worked just fine.
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/bassClarinetXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bassClarinetXmasLights</a> looking a lot more finished - I’m getting around the header pin issue bu just soldering to them, that should make it easier to reuse it later (and also test things out like buttons etc) <a href="https://t.co/IwfLXt4AGh">pic.twitter.com/IwfLXt4AGh</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1192876887523106816?ref_src=twsrc%5Etfw">November 8, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### Diffusers
