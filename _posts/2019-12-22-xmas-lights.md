@@ -4,6 +4,7 @@ title: 'Christmas lights'
 slug: christmas-lights
 date: '2019-12-22'
 ---
+_For the TL;DR of this blog post, check out the hashtags #bariSaxXmasLights and #bassClarinetXmasLights on twitter_
 
 If you're an amateur musician, or were a musician at school, you'll know that one of the busiest months is December because of Christmas concerts. I've never really got the moaning over hearing Christmas songs for this reason - on average, we probably start practicing the music around September or October, so everyone else has it easy in my opinion.
 
@@ -68,8 +69,8 @@ I'm still not 100% sure what the problem was here, I think it's a combination of
 For the former, I tried using a voltage regulator to bring it up to 5v. This completely changed the colour of the LEDs to something I'd not told it (was like greeny/reddy) so that made things worse.
 For the latter, I tried using capacitors at the edge of each board. This proved entirely pointless.
 
-In the end I moved on to using a sketch [from the Adafruit Xmas lights tutorial](TODO) and this worked just fine. I was never intending to use that example anyway (it's called "twinkly lights" for reference, TODO: find the lib I was using).
-[TODO tweet here]
+In the end I moved on to using a sketch [from the Adafruit Xmas lights tutorial](https://learn.adafruit.com/simple-beautiful-color-changing-light-strand) and this worked just fine. I was never intending to use that example anyway (it's called "twinkly lights" for reference, TODO: find the lib I was using).
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/bassClarinetXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bassClarinetXmasLights</a> looking a lot more finished - I’m getting around the header pin issue bu just soldering to them, that should make it easier to reuse it later (and also test things out like buttons etc) <a href="https://t.co/IwfLXt4AGh">pic.twitter.com/IwfLXt4AGh</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1192876887523106816?ref_src=twsrc%5Etfw">November 8, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### Diffusers
 This is all well and good, but I wanted to diffuse out the light a little to make sure I didn't distract the people sitting next to me or blind those on the front row of the audience (which, as it turns out, front row was very very close to the band so this was a good idea).
@@ -78,23 +79,28 @@ I was out in York at the time texting my dad, who has a 3D printer and _loves_ m
 
 By the time I was back to our Airbnb in York, having only sent him a couple of links to the stuff I'd bought and not having measured the actual tollerances on the boards whatsoever, my dad had already designed a print, printed it, and cut out some milk bottle plastic circles to act as the diffuser material.
 
-[TODO: PIC FROM DAD HERE]
+![design]({{ site.url }}/images/design.jpeg)
+![print]({{ site.url }}/images/print.jpeg)
 
-A few weeks later I was back at my parents (for other reasons), while there I desoldered a bunch of connections to make them fit properly in the cases and took the lot back home where I turned it on.
+A few weeks later I was back at my parents house, while there I desoldered a bunch of connections to make them fit properly in the cases and took the lot back home where I turned it on.
 
-[TODO: TWEET/VIDEO HERE]
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hard to tell with twitters crap video quality but <a href="https://twitter.com/hashtag/bassClarinetXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bassClarinetXmasLights</a> diffuser cases are looking good (dad 3D printed the sides and base then cut milk bottle plastic up to use for the diffuse part) <a href="https://t.co/j2QXgxzxV1">pic.twitter.com/j2QXgxzxV1</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1196124180955193346?ref_src=twsrc%5Etfw">November 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Things were finally coming together.
 
 ## Bari sax build
 I felt that the bass clarinet lights were pretty much done at this point so I moved on to the easier build for my baritone sax. Turns out you can use up 2m of LEDs quite easily given the size of the instrument:
 
-[TWEET HERE]
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">When I bought 2m of LED strip, I wasn’t sure I’d need it. Turns out it’s not that hard to use up doing this <a href="https://twitter.com/hashtag/bariSaxXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bariSaxXmasLights</a> <a href="https://t.co/Ji7ZguCntr">pic.twitter.com/Ji7ZguCntr</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1198291351558864897?ref_src=twsrc%5Etfw">November 23, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-There's not as much to note here on this build - I pretty much just needed to solder a 3 wire JST connector to the other board and I was done. I did attempt to do a bluetooth connection to my phone to see if I could control it and/or allow me to turn it off should it be annoying to people, but I could never get this to work despite using the official Adafruit app and sketch. Next year's job.
+There's not as much to note here on this build - I pretty much just needed to solder a 3 wire JST connector to the other board and I was done. To make sure it all played nicely though, I did test out the strip to Lana Del Rey:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">LED strip goes surprisingly well with Lana Del Rey (working on <a href="https://twitter.com/hashtag/bariSaxXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bariSaxXmasLights</a> now) <a href="https://t.co/eDkZh3r7KY">pic.twitter.com/eDkZh3r7KY</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1198284408916197376?ref_src=twsrc%5Etfw">November 23, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I did attempt to do a bluetooth connection to my phone to see if I could control it and/or allow me to turn it off should it be annoying to people, but I could never get this to work despite using the official Adafruit app and sketch. Next year's job.
 
 ### Diffusing
-Again, I wanted the LEDs to be diffuse. I'm not sure whether I actually liked the resulting affect here, but my assumption when "building" the diffuser was the steps would be simple:
+Again, I wanted the LEDs to be diffuse. I'm not sure whether I actually liked the resulting effect here, but my assumption when "building" the diffuser was the steps would be simple:
 
 1. Get baking paper
 1. Stick one sheet of baking paper to LED strip using tape
@@ -103,11 +109,11 @@ Again, I wanted the LEDs to be diffuse. I'm not sure whether I actually liked th
 
 Turns out waxed paper (which is what baking paper is) doesn't play well with sellotape or plastic, so what I ended up doing was wrapping several layers around it tight and then kind of tension taping it all together:
 
-[TWEET HERE]
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">1.5 hrs till gig and I’m wrapping an LED strip in baking paper - pro tip, your project isn’t finished until it’s *actually* finished <a href="https://t.co/N5BiUdqez3">pic.twitter.com/N5BiUdqez3</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1203345159779475456?ref_src=twsrc%5Etfw">December 7, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Playing the gig
 Here's the final tweet from my gig (photo 1 taken after assembling my instruments and sticking copious amounts of velcro on, photo 2 taken after completing the gig):
-[TWEET]
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I’m definitely living my best life <a href="https://twitter.com/hashtag/bariSaxXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bariSaxXmasLights</a> <a href="https://twitter.com/hashtag/onlyonePatchOfVelcroFellOff?src=hash&amp;ref_src=twsrc%5Etfw">#onlyonePatchOfVelcroFellOff</a> <a href="https://twitter.com/hashtag/bassClarinetXmasLights?src=hash&amp;ref_src=twsrc%5Etfw">#bassClarinetXmasLights</a> <a href="https://t.co/lfu3ZX2qLQ">pic.twitter.com/lfu3ZX2qLQ</a></p>&mdash; Charlotte Godley (@charwarz) <a href="https://twitter.com/charwarz/status/1203439685542010880?ref_src=twsrc%5Etfw">December 7, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Overall, gig went really well - we were playing half disney, half christmas music this year so everyone knew the tunes and despite me spending far more time building my decorations than actually practicing, the reception was good from band members and audience members alike. The lights probably went down better with my bandies than audience (you can't fully see the lights because I was bang in the middle, which given we were playing in a theatre meant that the lights had the most intensity directly over me), but whatever. It was fun.
 
