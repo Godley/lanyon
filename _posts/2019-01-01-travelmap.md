@@ -38,7 +38,7 @@ For the frontend I'm using [mapbox](https://mapbox.com) which is another service
 Anyway, having probed the internet and my boyfriend for answers, I went with [`dotenv`](https://www.npmjs.com/package/dotenv) and had the docker process spit out the api key environment variable to a file which is loaded by that library, which is again loaded from a `now` secret.
 
 Around this time I also found out how to properly do CD using `now` - I had previously got a hack together using travis-ci, but since I last looked Now.sh has a good integration with GitHub, meaning all you need to do is click "install" and Now.sh will figure out everything from your `now.json` file. I'm well impressed.
-![now ui]({{ site.url }}/images/now-ui.png)
+![now ui](/images/now-ui.png)
 
 ## Step 3 - any other business
 Finally, working with the admin side of this app has always been a bit clunky. I went to Japan and did majority trains, so I wanted to know the route names and numbers. I went to the US and did mostly roads but also planes, so I wanted different colours for modes of transport. I wanted to have the concept of places so that I could represent hotels and activities I wanted to do and have some ability to collect up prices for things.
