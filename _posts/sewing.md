@@ -5,7 +5,7 @@ slug: sewing
 date: '2020-05-08'
 ---
 
-If you follow me on twitter at the moment, you'll probably notice, I tweet about sewing a lot right now. Back in September 2019 I visited India with my partner on a 3 week tour, and early on in the trip we went to a Fabric factory in Jaipur. To be honest, if you leave India without buying any clothing at all, you're probably doing something wrong. 
+If you follow me on twitter at the moment, you'll probably notice, I tweet about sewing a lot right now. Back in September 2019 I visited India with my partner on a 3 week tour, and early on in the trip we went to a Fabric factory in Jaipur. To be honest, if you leave India without buying any clothing at all, you're probably doing something wrong.   
 
 Anyway, I was _accidentally_ convinced to buy a saree with the intention of using it in a dress. As I walked out of the shop my partner scoffed a bit and said "right, yeah, you're definitely going to make a dress out of that" knowing it would probably languish in our cupboard and never see the light of day again.
 
