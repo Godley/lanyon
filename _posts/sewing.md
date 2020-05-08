@@ -1,0 +1,88 @@
+---
+layout: post
+title: 'Sewing for first timers'
+slug: sewing
+date: '2020-05-08'
+---
+
+If you follow me on twitter at the moment, you'll probably notice, I tweet about sewing a lot right now. Back in September 2019 I visited India with my partner on a 3 week tour, and early on in the trip we went to a Fabric factory in Jaipur. To be honest, if you leave India without buying any clothing at all, you're probably doing something wrong. 
+
+Anyway, I was _accidentally_ convinced to buy a saree with the intention of using it in a dress. As I walked out of the shop my partner scoffed a bit and said "right, yeah, you're definitely going to make a dress out of that" knowing it would probably languish in our cupboard and never see the light of day again.
+
+![saree](/images/saree.JPG)
+
+Fast forward to March 2020 and I can't go to band on a monday. I can't go to pole fitness classes on a wednesday. I'm at home all day and the idea of going outside for anything starts to seem less and less inviting as the days go by.
+
+So, I bought a sewing machine.
+
+I should mention that I'm lucky enough to have a mother who knew how to make dresses, had made many of her own clothes when she was a teenager and had shown me some of what goes into it. 
+
+So, here are some FAQs based on prompts from people on twitter.
+
+## What do I need to buy before I start?
+
+There's a joke my colleague who is into sewing told me when I first started talking about sewing, which is that you spend more time buying equipment than you do actual sewing. With that in mind, here's a selection of things I've needed over the last month or so (not including fabric):
+
+1. A sewing machine
+1. Somewhere to put said sewing machine. There's such a thing as a sewing machine table, but they're weirdly expensive. I bought a bedside table off IKEA for less than £50 and it works nicely.
+1. Some thread in a variety of colours
+1. Sharp scissors. I use fishkar razor sharp scissors, and for my silk, a roller cutter. If you use the latter, get a cutting board. 
+1. Pins
+1. Needles for handsewing
+1. An iron and ironing board, for any instructions that mension "pressing" things.
+
+
+## How do I get started with sewing? / How do I make something not look like a sack of potatoes?
+
+So, the first thing I did when starting my current dress was to find a couple of patterns I liked. Even if you're a beginner, I'd recommend this as a way to start rather than making your own because you can progress at your own speed and use the undo button (aka a thread unpicker) whenever you like, so the ambitiousness of the project doesn't matter too much.
+
+A dress pattern is basically a couple of sheets of tracing paper with printed cut marks on them, and you cut out the pieces, lay them across your fabric and then cut it all out.
+
+On the back of the pattern envelope there will be a table - along the top are the dress sizes. Along the rows, to the left, there will be a measurement, e.g 1.5 yrds or whatever. This is the **width** of fabric, generally there are a few standard measurements, e.g 105cm or 150cm that fabric factories use. The numbers across from this in each size column are the **lengths** of fabric you will need. If it's a lined dress, there will be a section for the fabric you're going to use, and a section for the lining.
+
+There will be an instruction booklet with the tracing paper which tells you:
+
+1. Which pieces you need to cut - these are numbered, and there are usually multiple options for any given pattern.
+1. A layout for the suggested widths and lengths of fabric. This is intended to get the most out of your material though you can do whatever you like if you have for example offcuts you'd like to use up.
+1. How to put it together.
+
+The instructions for how to put the item together might read a bit weird. I would say google anything that sounds like a technical term, for example:
+
+1. **stay stitching**. This means stitching at the edges of fabric to make it hold without pulling in a different direction when you're doing other work to the fabric, e.g sewing seams. You sew through 1 layer of fabric with no hem.
+1. **fusible interfacing**. This is a type of material which you iron into the fabric to stiffen it up, particularly for collars or necklines.
+1. **Press seams [to the center | to the side etc]**. This means to iron down your seams so that the sides of the material are pressed down to either side of the seam.
+
+**Handsewing** is the easiest way to get started if you're unsure what you're doing because you have total control over where the stitches are going. Your stitches are generally also bigger, so you can pull them out much easier if something goes wrong. It will not hold for clothes you're actually going to wear. This is where I would get a bit of offcut fabric and play around with your machine to get used to the controls and the stitches before you start to sew it for realsies.
+
+The hardest things for me are **speed** and **keeping it straight** - both of these take practice, it's a lot like driving a car. You have to figure out how to get the right pressure on the pedal and how to keep the steering wheel, aka fabric, straight. You get the hang of this over time by varying your hand positions - sometimes I pull it through the machine gently from one side with my other hand gently steering it in the right direction.
+
+As for not making it look like a sack of potatoes...you'd be surprised how easy it is to make something look good when you've done the cutting right. Beyond that it's just keeping your seams straight for the most part and avoiding them getting to wide or too narrow at various points.
+
+## How do I choose a pattern?
+This is very much a personal taste thing, but for some clothes there may also be sizing that comes into play here. Depending on your size you need to check the pattern's range - most patterns I've ever read have been multisized, meaning that there are cutting options for several different sizes. However, there's usually a split somewhere, e.g 8-10-12-14 and 16-18-20-22 so make sure you buy the right one.
+
+You also need to watch out for your own body's dimensions - this is where making your own clothes can be a better experience if for example, you normally sit between 2 different sizes. The pattern should give you an indication for each size on what's the minimum widths for each size - in women there are generally 3 measurements, **bust**, **waist** and **hips**. I have no idea on men. It's probably less complicated.
+
+Generally, start out on a pattern that _says_ it's easy, of which there are many. Beyond that, I choose based on my own personal dress sense. Patterns cost anywhere between £5-15 so I usually pick a couple. Each one generally comes with several options for skirt lengths and top types, so you can just buy one and work your way through all the iterations if you're just looking to play around with things.
+
+## How do I choose fabric?
+For your first try, I would recommend choosing a fabric you like, but not too much, and one that's cheap. I personally like printed cotton because it's fun, cheap, and doesn't require any special needles.
+
+For more expensive or weird fabrics you might need to change needles. E.g I just bought some thin and sharp needles for my silk, I know jersey fabrics need what's called a stretch needle, etc.
+
+If you're unsure, probably stick with cotton. If there's another type of fabric you really like, there are charts all over the internet for what type of needle to choose.
+
+Fabric can also depend on where you're planning to wear the outfit - this is generally the easiest way to make a fancy dress into a day dress or vice versa.
+
+## What about stitches?
+Honestly the vast majority of projects are only going to need you to straight stitch. This is where it's useful to have played around with your machine controls before you do something for real.
+
+Generally your machine will have 2 or 3 dials on them that look intimidating. This varies depending how fancy your machine is, but:
+1. There'll be a dial for thread tension. This is where you balance out the tension of your top thread with the tension coming out of the bobbin, or bottom thread. You don't really need to change this unless there's an issue where your threads are getting caught etc.
+1. There'll be a dial with many many numbers on it which changes the stitch type. There should be a guide or key somewhere on your machine that tells you what numbers match to the stitch type. 
+1. Finally, there's stitch length. Short stitches = use lots of thread, takes longer to feed through the machine but harder to rip out. Long stitches = less thread, faster but easier to rip out. Bigger number on this dial == bigger stitches.
+
+So, generally, you want a straight stitch with medium to long stitch lengths. That's it. No need to fiddle with it constantly.
+
+## What about the pockets?
+Adding pockets is actually a doddle. Most patterns won't have them if it's a dress, but youtube is your friend.
