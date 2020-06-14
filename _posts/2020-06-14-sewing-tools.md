@@ -63,3 +63,7 @@ The advice for my canvas was "buy heavy duty polyester thread for machining". I'
 
 ## 10. Most types of feet
 In my aforementioned kit of feet, I also have an invisible zipper foot and an overlocking foot. The former I haven't figured out how to use without jamming my machine, the latter I've got by with just using the zigzag stitch. In both cases it probably depends on how detail oriented you are - I intend to learn how to use my invisible zipper foot to get a neater line, and overlocking is mentioned so often in patterns and the sewing bee on TV that I should probably give it a shot.
+
+## 11. Pinking shears
+I bought a pair of pinking shears because the canvas I'm using tends to fray quite a lot. In order to get around this I tried cutting the edges with pinking shears (scissors that cut triangles instead of cutting a straight line), and while that slowed the fraying, it did leave kind of a weird edge pattern where it frayed up to a straight line.
+Instead i've just zigzag stitched any raw edges (including before prewashing it) and this has worked a treat.
