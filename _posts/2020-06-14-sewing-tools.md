@@ -10,7 +10,7 @@ I'm currently 80% of the way to my 4th dress since I started sewing, and in that
 "how to sew pockets"
 "how to work with canvas"
 
-There's a mix of good and bad advice on the internet, in particular pertaining to the tools you're going to need, and every time I've ordered new tools and then waited for them, sometimes it's turned out to be a waste of time, and other times it's been a life changer.
+Usually each of those has some recommended tooling, and I've found that sometimes I've waited for those tools and found they were well useful, but a lot of the time it's turned out to be utterly pointless and I've regretted waiting before starting my project.
 
 So, here's a list of (some of the) things I've bought for sewing, by order of most used to least used.
 
