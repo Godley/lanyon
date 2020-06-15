@@ -42,10 +42,10 @@ Again, this was for cutting silk. For anything that's slippy, this is useful in 
 
 Masking tape is for taping it to the table, but I've also found it useful for where I've cut the wrong size from a dress pattern etc so that it's mended properly.
 
-## 7. Zipper foot, button hole foot
+## 7. Zipper foot, invisible zipper, button hole foot
 When I first got my sewing machine, I accidentally removed the foot instead of lifting/lowering it, and I thought to myself "what a stupid design, why would I want to remove this?"
 
-Since then I've bought a selection of feet which, to be honest I mostly bought the kit of 11 different feet because that seemed most cost effective on amazon and covered the ones I needed. I've ended up using...1 of those which is the zipper foot. 
+Since then I've bought a selection of feet which, to be honest I mostly bought the kit of 11 different feet because that seemed most cost effective on amazon and covered the ones I needed. I've ended up using...2 of those which is the zipper foot. 
 
 Separately to that I have a button hole foot which came with my machine, which is 100% necessary if you're going to sew a button hole and makes what looked to me like it was going to be very fiddly magically done within 5 minutes.
 
@@ -62,7 +62,7 @@ In the case of thread, the advice for my silk was "buy silk thread for handsewin
 The advice for my canvas was "buy heavy duty polyester thread for machining". I've tried the heavy duty stuff on it and it seems unnecessary and is very coarse, and not well balanced with the fabric thickness which is why you'd vary types of thread. I'd probably just in future buy the fabric and test it and eyeball whether the thickness is enough before going on to order new thread.
 
 ## 10. Most types of feet
-In my aforementioned kit of feet, I also have an invisible zipper foot and an overlocking foot. The former I haven't figured out how to use without jamming my machine, the latter I've got by with just using the zigzag stitch. In both cases it probably depends on how detail oriented you are - I intend to learn how to use my invisible zipper foot to get a neater line, and overlocking is mentioned so often in patterns and the sewing bee on TV that I should probably give it a shot.
+In my aforementioned kit of feet, I also have an invisible zipper foot and an overlocking foot. ~~The former I haven't figured out how to use without jamming my machine~~ (I figured out I can move the position of my needle and now invisible zipper feet are a doddle), the latter I've got by with just using the zigzag stitch. In both cases it probably depends on how detail oriented you are - I intend to learn how to use my invisible zipper foot to get a neater line, and overlocking is mentioned so often in patterns and the sewing bee on TV that I should probably give it a shot.
 
 ## 11. Pinking shears
 I bought a pair of pinking shears because the canvas I'm using tends to fray quite a lot. In order to get around this I tried cutting the edges with pinking shears (scissors that cut triangles instead of cutting a straight line), and while that slowed the fraying, it did leave kind of a weird edge pattern where it frayed up to a straight line.
